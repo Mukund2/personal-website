@@ -231,7 +231,7 @@ a:hover {
 .hub-inner {
   position: relative;
   z-index: 1;
-  max-width: 580px;
+  max-width: min(580px, 88vw);
 }
 
 /* Postcard layout — message left, address right */
@@ -807,7 +807,7 @@ a.item-row:hover .item-arrow {
   }
 
   .hub-inner {
-    max-width: 88%;
+    max-width: 85vw;
     margin: 0 auto;
   }
 
@@ -817,6 +817,19 @@ a.item-row:hover .item-arrow {
 
   .postcard-tilted {
     transform: rotate(-0.3deg);
+  }
+
+  .postcard-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .postcard-right {
+    align-items: flex-start;
+  }
+
+  .hub-name-block {
+    text-align: left;
   }
 
   .postcard-layout {
