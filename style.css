@@ -822,29 +822,19 @@ a.item-row:hover .item-arrow {
   }
 
   .postcard-layout {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
   }
 
-  .postcard-right {
-    align-items: flex-start;
-  }
-
-  .hub-name-block {
-    text-align: left;
+  .hub-name {
+    font-size: 1.2rem;
   }
 
   .postcard-layout {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
   }
 
-  .postcard-right {
-    align-items: flex-start;
-  }
-
-  .hub-name-block {
-    text-align: left;
+  .hub-name {
+    font-size: 1.2rem;
   }
 
   .hub-nav {
