@@ -231,7 +231,8 @@ a:hover {
 .hub-inner {
   position: relative;
   z-index: 1;
-  max-width: min(580px, 88vw);
+  max-width: min(580px, calc(100vw - 48px));
+  box-sizing: border-box;
 }
 
 /* Postcard layout — message left, address right */
