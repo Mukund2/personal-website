@@ -838,8 +838,8 @@ a.item-row:hover .item-arrow {
   }
 
   .hub-nav {
-    gap: 24px;
-    justify-content: flex-start;
+    justify-content: center;
+    gap: 20px;
   }
 
   .connect-cards {
