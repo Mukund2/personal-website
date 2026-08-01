@@ -15,41 +15,45 @@
     body { opacity: 0; transition: opacity 0.2s ease; }
     body.ready { opacity: 1; }
   </style>
-  <link rel="stylesheet" href="home.css?v=2026080102">
+  <link rel="stylesheet" href="home.css?v=2026080103">
 </head>
 <body>
+
+  <!-- Back bar (focus mode only) -->
+  <div class="backbar">
+    <a class="back" href="/">&larr; Index</a>
+    <span class="here" id="backbarTitle"></span>
+  </div>
 
   <div class="grid">
 
     <!-- ABOUT -->
     <section class="col col-about">
-      <div class="sticky">
-        <div class="col-head">About Me</div>
+      <div class="col-head">About Me</div>
 
-        <div class="about-name">Mukund Kunapareddy</div>
+      <div class="about-name">Mukund Kunapareddy</div>
 
-        <div class="about-bio">
-          <p>I'm building a pipeline between Silicon Valley technology and Washington's most pressing national security challenges. <em>Peace follows deterrence.</em></p>
-          <p>Studying Management Information Systems at San José State. Interested in strategy, the American industrial base, and where software meets hard problems. On the side, I play golf.</p>
-        </div>
+      <div class="about-bio">
+        <p>I'm building a pipeline between Silicon Valley technology and Washington's most pressing national security challenges. <em>Peace follows deterrence.</em></p>
+        <p>Studying Management Information Systems at San José State. Interested in strategy, the American industrial base, and where software meets hard problems. On the side, I play golf.</p>
+      </div>
 
-        <div class="linklist">
-          <div class="about-sub">Contact</div>
-          <a href="mailto:mkunapareddy@gmail.com">mkunapareddy@gmail.com</a>
-          <a href="https://x.com/mukundlk" target="_blank" rel="noopener">X — @mukundlk</a>
-          <a href="https://www.linkedin.com/in/mukundlk" target="_blank" rel="noopener">LinkedIn — in/mukundlk</a>
-          <a href="https://github.com/Mukund2" target="_blank" rel="noopener">GitHub — Mukund2</a>
-        </div>
+      <div class="linklist">
+        <div class="about-sub">Contact</div>
+        <a href="mailto:mkunapareddy@gmail.com">mkunapareddy@gmail.com</a>
+        <a href="https://x.com/mukundlk" target="_blank" rel="noopener">X — @mukundlk</a>
+        <a href="https://www.linkedin.com/in/mukundlk" target="_blank" rel="noopener">LinkedIn — in/mukundlk</a>
+        <a href="https://github.com/Mukund2" target="_blank" rel="noopener">GitHub — Mukund2</a>
+      </div>
 
-        <div class="about-influences">
-          <div class="il-head">Influences</div>
-          <ul>
-            <li><a href="https://www.youtube.com/watch?v=Wj6ttdIeBnE" target="_blank" rel="noopener">Alex Karp, American Dynamism Summit <span class="by">— a16z</span></a></li>
-            <li><a href="https://stanfordreview.org/in-defense-of-defense-tech/" target="_blank" rel="noopener">In Defense of Defense Tech <span class="by">— Stanford Review</span></a></li>
-            <li><a href="https://archive.org/details/simulacra-and-simulation-1995-university-of-michigan-press" target="_blank" rel="noopener">Simulacra and Simulation <span class="by">— Baudrillard</span></a></li>
-            <li>The Singularity Is Near <span class="by">— Kurzweil</span></li>
-          </ul>
-        </div>
+      <div class="about-influences">
+        <div class="il-head">Influences</div>
+        <ul>
+          <li><a href="https://www.youtube.com/watch?v=Wj6ttdIeBnE" target="_blank" rel="noopener">Alex Karp, American Dynamism Summit <span class="by">— a16z</span></a></li>
+          <li><a href="https://stanfordreview.org/in-defense-of-defense-tech/" target="_blank" rel="noopener">In Defense of Defense Tech <span class="by">— Stanford Review</span></a></li>
+          <li><a href="https://archive.org/details/simulacra-and-simulation-1995-university-of-michigan-press" target="_blank" rel="noopener">Simulacra and Simulation <span class="by">— Baudrillard</span></a></li>
+          <li>The Singularity Is Near <span class="by">— Kurzweil</span></li>
+        </ul>
       </div>
     </section>
 
@@ -57,86 +61,83 @@
     <section class="col col-work">
       <div class="col-head">Select Work</div>
 
-      <!-- 01 image -->
-      <div class="work">
-        <a class="shot" href="https://sjsunsin.org" target="_blank" rel="noopener">
-          <img src="img/nsin.jpg" alt="SJSU National Security Innovation Network website" loading="lazy">
-        </a>
-        <div class="cap">
-          <div class="cap-l"><span class="n">01</span>NSIN at SJSU</div>
-          <div class="cap-r">
-            <div class="meta">Founder · Website · 2026</div>
-            <div class="desc">Bridging Silicon Valley to Washington's hardest national-security problems.</div>
-            <a class="more" href="https://sjsunsin.org" target="_blank" rel="noopener">Visit <span class="arw">&rarr;</span></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 02 text -->
-      <div class="work">
-        <div class="cap">
-          <div class="cap-l"><span class="n">02</span>Dual-Use Tech Bridge</div>
-          <div class="cap-r">
-            <div class="meta">Founder · AI platform · 2026</div>
-            <div class="desc">Maps ~120,000 public U.S. military technologies to commercial applications, with an inference layer that surfaces transfers no one had made yet.</div>
+      <!-- Personal Projects -->
+      <section class="cat" data-cat="projects">
+        <a class="cat-head" href="#projects"><span class="label">Personal Projects</span><span class="arw">&rarr;</span></a>
+        <div class="cat-items">
+          <article class="item">
+            <div class="it-title">Dual-Use Tech Bridge</div>
+            <div class="it-meta">Founder · AI platform · 2026</div>
+            <div class="it-desc">Maps ~120,000 public U.S. military technologies to commercial applications, with an inference layer that surfaces transfers no one had made yet.</div>
             <a class="more" href="/dual-use-tech-bridge">Read the case <span class="arw">&rarr;</span></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 03 image -->
-      <div class="work">
-        <a class="shot" href="https://sjsuformulasae.com" target="_blank" rel="noopener">
-          <img src="img/fsae.jpg" alt="Spartan Racing Formula SAE website" loading="lazy">
-        </a>
-        <div class="cap">
-          <div class="cap-l"><span class="n">03</span>Spartan Racing — FSAE</div>
-          <div class="cap-r">
-            <div class="meta">Sponsorship &amp; Media · 2026</div>
-            <div class="desc">Raised $30K in three weeks; designed and built the team site.</div>
-            <a class="more" href="https://sjsuformulasae.com" target="_blank" rel="noopener">Visit <span class="arw">&rarr;</span></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 04 text -->
-      <div class="work">
-        <div class="cap">
-          <div class="cap-l"><span class="n">04</span>Memi</div>
-          <div class="cap-r">
-            <div class="meta">Founder · AI-native CRM · 2026</div>
-            <div class="desc">A CRM that lives inside your text messages — meeting people where they already are, not in another dashboard that taxes your attention.</div>
-            <span class="more" style="text-decoration:none;color:var(--muted);cursor:default">Private beta</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 05 image -->
-      <div class="work">
-        <a class="shot" href="https://sjsurobotics.org" target="_blank" rel="noopener">
-          <img src="img/robotics.jpg" alt="SJSU Robotics website" loading="lazy">
-        </a>
-        <div class="cap">
-          <div class="cap-l"><span class="n">05</span>SJSU Robotics</div>
-          <div class="cap-r">
-            <div class="meta">External Relations · Website · 2025</div>
-            <div class="desc">Ran sponsorships and media; built the club site.</div>
-            <a class="more" href="https://sjsurobotics.org" target="_blank" rel="noopener">Visit <span class="arw">&rarr;</span></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 06 text -->
-      <div class="work">
-        <div class="cap">
-          <div class="cap-l"><span class="n">06</span>Theron</div>
-          <div class="cap-r">
-            <div class="meta">Security · Agent proxy · 2026</div>
-            <div class="desc">A local proxy that screens every autonomous-agent request for prompt injection and anomalous behavior. Sub-100ms latency, zero config.</div>
+          </article>
+          <article class="item">
+            <div class="it-title">Memi</div>
+            <div class="it-meta">Founder · AI-native CRM · 2026</div>
+            <div class="it-desc">A CRM that lives inside your text messages — meeting people where they already are, not in another dashboard that taxes your attention.</div>
+            <span class="more static">Private beta</span>
+          </article>
+          <article class="item">
+            <div class="it-title">Theron</div>
+            <div class="it-meta">Security · Agent proxy · 2026</div>
+            <div class="it-desc">A local proxy that screens every autonomous-agent request for prompt injection and anomalous behavior. Sub-100ms latency, zero config.</div>
             <a class="more" href="https://github.com/Mukund2/theron" target="_blank" rel="noopener">GitHub <span class="arw">&rarr;</span></a>
-          </div>
+          </article>
         </div>
-      </div>
+      </section>
+
+      <!-- Student Organizations -->
+      <section class="cat" data-cat="orgs">
+        <a class="cat-head" href="#orgs"><span class="label">Student Organizations</span><span class="arw">&rarr;</span></a>
+        <div class="cat-items">
+          <article class="item">
+            <a class="shot" href="https://sjsunsin.org" target="_blank" rel="noopener"><img src="img/nsin.jpg" alt="SJSU National Security Innovation Network website" loading="lazy"></a>
+            <div class="it-title">NSIN at SJSU</div>
+            <div class="it-meta">Founder · Website · 2026</div>
+            <div class="it-desc">Bridging Silicon Valley to Washington's hardest national-security problems. Founded the chapter and built the site.</div>
+            <a class="more" href="https://sjsunsin.org" target="_blank" rel="noopener">Visit <span class="arw">&rarr;</span></a>
+          </article>
+          <article class="item">
+            <a class="shot" href="https://sjsuformulasae.com" target="_blank" rel="noopener"><img src="img/fsae.jpg" alt="Spartan Racing Formula SAE website" loading="lazy"></a>
+            <div class="it-title">Spartan Racing — FSAE</div>
+            <div class="it-meta">Sponsorship &amp; Media · 2026</div>
+            <div class="it-desc">Raised $30K in three weeks; designed and built the team site.</div>
+            <a class="more" href="https://sjsuformulasae.com" target="_blank" rel="noopener">Visit <span class="arw">&rarr;</span></a>
+          </article>
+          <article class="item">
+            <a class="shot" href="https://sjsurobotics.org" target="_blank" rel="noopener"><img src="img/robotics.jpg" alt="SJSU Robotics website" loading="lazy"></a>
+            <div class="it-title">SJSU Robotics</div>
+            <div class="it-meta">External Relations · Website · 2025</div>
+            <div class="it-desc">Ran sponsorships and media; built the club site.</div>
+            <a class="more" href="https://sjsurobotics.org" target="_blank" rel="noopener">Visit <span class="arw">&rarr;</span></a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Writing -->
+      <section class="cat" data-cat="writing">
+        <a class="cat-head" href="#writing"><span class="label">Writing</span><span class="arw">&rarr;</span></a>
+        <div class="cat-items">
+          <article class="item">
+            <div class="it-title"><a href="https://mukundk.substack.com/p/eval-is-all-you-need" target="_blank" rel="noopener">Eval Is All You Need</a></div>
+            <div class="it-meta">Essay · Substack</div>
+            <div class="it-desc">On jagged AGI, solving biology, and world models.</div>
+            <a class="more" href="https://mukundk.substack.com/p/eval-is-all-you-need" target="_blank" rel="noopener">Read <span class="arw">&rarr;</span></a>
+          </article>
+          <article class="item">
+            <div class="it-title"><a href="https://mukundk.substack.com/p/the-chinese-singularity" target="_blank" rel="noopener">The Chinese Singularity</a></div>
+            <div class="it-meta">Essay · Substack</div>
+            <div class="it-desc">On Gen Z's regression to Luddism, San Francisco's PR problem, and how America wins the AI race.</div>
+            <a class="more" href="https://mukundk.substack.com/p/the-chinese-singularity" target="_blank" rel="noopener">Read <span class="arw">&rarr;</span></a>
+          </article>
+          <article class="item">
+            <div class="it-title"><a href="https://x.com/mukundlk" target="_blank" rel="noopener">@mukundlk</a></div>
+            <div class="it-meta">X</div>
+            <div class="it-desc">Where I write most often — shorter and more frequent.</div>
+            <a class="more" href="https://x.com/mukundlk" target="_blank" rel="noopener">Follow <span class="arw">&rarr;</span></a>
+          </article>
+        </div>
+      </section>
 
     </section>
 
@@ -206,24 +207,6 @@
         </div>
       </div>
 
-      <div class="res">
-        <div class="res-label">Writing</div>
-        <div class="res-body">
-          <div class="entry">
-            <div class="org"><a href="https://mukundk.substack.com/p/eval-is-all-you-need" target="_blank" rel="noopener">Eval Is All You Need</a></div>
-            <div class="note">On jagged AGI, solving biology, and world models.</div>
-          </div>
-          <div class="entry">
-            <div class="org"><a href="https://mukundk.substack.com/p/the-chinese-singularity" target="_blank" rel="noopener">The Chinese Singularity</a></div>
-            <div class="note">How America wins the AI race.</div>
-          </div>
-          <div class="entry">
-            <div class="org"><a href="https://x.com/mukundlk" target="_blank" rel="noopener">@mukundlk</a></div>
-            <div class="note">Where I write most often.</div>
-          </div>
-        </div>
-      </div>
-
     </section>
 
   </div>
@@ -233,6 +216,37 @@
   <script>
     document.fonts.ready.then(() => document.body.classList.add('ready'));
     setTimeout(() => document.body.classList.add('ready'), 800);
+
+    // ---- Inline category focus ----
+    var titles = { projects: 'Personal Projects', orgs: 'Student Organizations', writing: 'Writing' };
+    var backbarTitle = document.getElementById('backbarTitle');
+    function apply() {
+      var h = (location.hash || '').replace('#', '');
+      if (titles[h]) {
+        document.body.classList.add('is-focus');
+        document.body.setAttribute('data-focus', h);
+        backbarTitle.textContent = titles[h];
+        var w = document.querySelector('.col-work'); if (w) w.scrollTop = 0;
+        window.scrollTo(0, 0);
+      } else {
+        document.body.classList.remove('is-focus');
+        document.body.removeAttribute('data-focus');
+      }
+    }
+    window.addEventListener('hashchange', apply);
+    apply();
+
+    function clearFocus(e) {
+      if (e) e.preventDefault();
+      history.pushState('', document.title, location.pathname + location.search);
+      apply();
+    }
+    document.querySelector('.backbar .back').addEventListener('click', clearFocus);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && document.body.classList.contains('is-focus')) clearFocus();
+    });
+
+    // ---- Clock ----
     (function () {
       var el = document.getElementById('clock');
       function p(n){ return String(n).padStart(2,'0'); }

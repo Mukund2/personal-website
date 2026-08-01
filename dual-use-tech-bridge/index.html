@@ -12,8 +12,10 @@
     body { opacity: 0; transition: opacity 0.2s ease; }
     body.ready { opacity: 1; }
   </style>
-  <link rel="stylesheet" href="../home.css?v=2026080102">
+  <link rel="stylesheet" href="../home.css?v=2026080103">
   <style>
+    /* This detail page scrolls normally — override the homepage's fixed-height shell */
+    body { height: auto; overflow: visible; display: block; }
     .page { max-width: 760px; margin: 0 auto; padding: 18px var(--pad) 120px; }
 
     .bar {
