@@ -118,12 +118,13 @@ body.is-focus .backbar { display: flex; }
 }
 .linklist a:hover { text-decoration-color: #000; }
 
-.about-influences { margin-top: 2em; }
-.about-influences .il-head { text-decoration: underline; text-underline-offset: 2px; margin-bottom: 0.6em; }
-.about-influences ul { list-style: none; }
-.about-influences li { margin-bottom: 0.35em; }
-.about-influences .by { color: var(--muted); font-style: italic; }
-.about-influences a:hover { color: var(--muted); }
+.about-writing { margin-top: 2em; }
+.about-writing .il-head { text-decoration: underline; text-underline-offset: 2px; margin-bottom: 0.6em; }
+.about-writing ul { list-style: none; }
+.about-writing li { margin-bottom: 0.5em; }
+.about-writing .by { color: var(--muted); font-style: italic; }
+.about-writing a { text-decoration: underline; text-underline-offset: 2px; text-decoration-color: rgba(0,0,0,0.3); }
+.about-writing a:hover { text-decoration-color: #000; }
 
 /* ============================================
    Select Work — categories
@@ -149,13 +150,15 @@ body.is-focus .backbar { display: flex; }
 .cat-items { display: flex; flex-direction: column; gap: 40px; }
 
 .item { }
-.item .shot {
-  display: block; width: 100%; aspect-ratio: 16 / 10;
-  border: 1px solid var(--line); overflow: hidden; margin-bottom: 16px; background: #f2f2f2;
+.item .logo {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; aspect-ratio: 3 / 2;
+  border: 1px solid var(--line); background: #fff;
+  margin-bottom: 16px; padding: 11% 14%;
 }
-.item .shot img { width: 100%; height: 100%; object-fit: cover; display: block;
-  transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
-.item .shot:hover img { transform: scale(1.02); }
+.item .logo img { max-width: 100%; max-height: 100%; object-fit: contain; display: block;
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); }
+.item .logo:hover img { transform: scale(1.03); }
 
 .it-title { font-weight: 500; margin-bottom: 3px; }
 .it-meta { color: var(--muted); margin-bottom: 8px; }
