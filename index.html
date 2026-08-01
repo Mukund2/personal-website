@@ -15,7 +15,7 @@
     body { opacity: 0; transition: opacity 0.2s ease; }
     body.ready { opacity: 1; }
   </style>
-  <link rel="stylesheet" href="home.css?v=2026080107">
+  <link rel="stylesheet" href="home.css?v=2026080108">
 </head>
 <body>
 
@@ -61,11 +61,6 @@
       <section class="cat cat-slides" data-cat="projects">
         <div class="slides-head">
           <span class="label">Personal Projects</span>
-          <div class="slides-nav">
-            <button class="snav" data-dir="-1" aria-label="Previous project">&larr;</button>
-            <span class="scount"><span id="scur">1</span> / 3</span>
-            <button class="snav" data-dir="1" aria-label="Next project">&rarr;</button>
-          </div>
         </div>
         <div class="slides">
           <div class="slides-track">
@@ -88,6 +83,12 @@
               <a class="more" href="https://github.com/Mukund2/theron" target="_blank" rel="noopener">GitHub <span class="arw">&rarr;</span></a>
             </article>
           </div>
+          <button class="snav-next" aria-label="Next project">&rarr;</button>
+        </div>
+        <div class="slides-dots">
+          <button class="dot is-on" data-i="0" aria-label="Show project 1"></button>
+          <button class="dot" data-i="1" aria-label="Show project 2"></button>
+          <button class="dot" data-i="2" aria-label="Show project 3"></button>
         </div>
       </section>
 
@@ -220,15 +221,14 @@
       var track = document.querySelector('.slides-track');
       if (!track) return;
       var n = track.children.length, i = 0;
-      var cur = document.getElementById('scur');
-      function go(d) {
-        i = (i + d + n) % n;
+      var dots = [].slice.call(document.querySelectorAll('.slides-dots .dot'));
+      function render() {
         track.style.transform = 'translateX(' + (-i * 100) + '%)';
-        if (cur) cur.textContent = i + 1;
+        dots.forEach(function (dt, k) { dt.classList.toggle('is-on', k === i); });
       }
-      document.querySelectorAll('.snav').forEach(function (b) {
-        b.addEventListener('click', function () { go(parseInt(b.getAttribute('data-dir'), 10)); });
-      });
+      var next = document.querySelector('.snav-next');
+      if (next) next.addEventListener('click', function () { i = (i + 1) % n; render(); });
+      dots.forEach(function (dt, k) { dt.addEventListener('click', function () { i = k; render(); }); });
     })();
 
     // ---- Copy install command ----
