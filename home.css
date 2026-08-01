@@ -97,6 +97,9 @@ body.is-focus .backbar { display: flex; }
   border-bottom: 1px solid var(--line);
   margin-bottom: 28px;
 }
+a.col-head { display: block; }
+a.col-head .arw { color: var(--muted); transition: transform 0.2s ease; }
+a.col-head:hover .arw { transform: translateX(4px); color: var(--fg); }
 
 /* ============================================
    About column
