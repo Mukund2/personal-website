@@ -15,7 +15,7 @@
     body { opacity: 0; transition: opacity 0.2s ease; }
     body.ready { opacity: 1; }
   </style>
-  <link rel="stylesheet" href="home.css?v=2026080106">
+  <link rel="stylesheet" href="home.css?v=2026080107">
 </head>
 <body>
 
@@ -57,28 +57,37 @@
     <section class="col col-work">
       <div class="col-head">Select Work</div>
 
-      <!-- Personal Projects -->
-      <section class="cat" data-cat="projects">
-        <a class="cat-head" href="#projects"><span class="label">Personal Projects</span><span class="arw">&rarr;</span></a>
-        <div class="cat-items">
-          <article class="item">
-            <div class="it-title">Dual-Use Tech Bridge</div>
-            <div class="it-meta">2026</div>
-            <div class="it-desc">Maps ~120,000 public U.S. military technologies to commercial applications, with an inference layer that surfaces transfers no one had made yet.</div>
-            <a class="more" href="https://github.com/Mukund2/dual-use-tech-bridge" target="_blank" rel="noopener">GitHub <span class="arw">&rarr;</span></a>
-          </article>
-          <article class="item">
-            <div class="it-title">Memi</div>
-            <div class="it-meta">2026</div>
-            <div class="it-desc">A CRM that lives inside your text messages — meeting people where they already are, not in another dashboard that taxes your attention.</div>
-            <span class="more static">Private beta</span>
-          </article>
-          <article class="item">
-            <div class="it-title">Theron</div>
-            <div class="it-meta">2026</div>
-            <div class="it-desc">A local proxy that screens every autonomous-agent request for prompt injection and anomalous behavior. Sub-100ms latency, zero config.</div>
-            <a class="more" href="https://github.com/Mukund2/theron" target="_blank" rel="noopener">GitHub <span class="arw">&rarr;</span></a>
-          </article>
+      <!-- Personal Projects (carousel) -->
+      <section class="cat cat-slides" data-cat="projects">
+        <div class="slides-head">
+          <span class="label">Personal Projects</span>
+          <div class="slides-nav">
+            <button class="snav" data-dir="-1" aria-label="Previous project">&larr;</button>
+            <span class="scount"><span id="scur">1</span> / 3</span>
+            <button class="snav" data-dir="1" aria-label="Next project">&rarr;</button>
+          </div>
+        </div>
+        <div class="slides">
+          <div class="slides-track">
+            <article class="item slide">
+              <div class="it-title">Dual-Use Tech Bridge</div>
+              <div class="it-meta">2026</div>
+              <div class="it-desc">Maps ~120,000 public U.S. military technologies to commercial applications, with an inference layer that surfaces transfers no one had made yet.</div>
+              <a class="more" href="https://github.com/Mukund2/dual-use-tech-bridge" target="_blank" rel="noopener">GitHub <span class="arw">&rarr;</span></a>
+            </article>
+            <article class="item slide">
+              <div class="it-title">Memi</div>
+              <div class="it-meta">Jan 2026 – Mar 2026</div>
+              <div class="it-desc">A CRM that lives inside your text messages — meeting people where they already are, not in another dashboard that taxes your attention.</div>
+              <button class="cmd" type="button" data-copy="clawhub install memi">clawhub install memi</button>
+            </article>
+            <article class="item slide">
+              <div class="it-title">Theron</div>
+              <div class="it-meta">2026</div>
+              <div class="it-desc">A local proxy that screens every autonomous-agent request for prompt injection and anomalous behavior. Sub-100ms latency, zero config.</div>
+              <a class="more" href="https://github.com/Mukund2/theron" target="_blank" rel="noopener">GitHub <span class="arw">&rarr;</span></a>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -152,13 +161,8 @@
       </div>
 
       <div class="res">
-        <div class="res-label">Leadership</div>
+        <div class="res-label">Honors</div>
         <div class="res-body">
-          <div class="entry">
-            <div class="org">NSIN at SJSU</div>
-            <div class="role">Founder &amp; President</div>
-            <div class="date">Mar 2026 – Present</div>
-          </div>
           <div class="entry">
             <div class="org">AI Student Ambassador</div>
             <div class="role">Lucas College of Business</div>
@@ -166,20 +170,10 @@
             <div class="note">Sole AI ambassador for the college; shaped the AI-literacy course now required of every SJSU student.</div>
           </div>
           <div class="entry">
-            <div class="org">Spartan Racing — FSAE</div>
-            <div class="role">Sponsorship &amp; Media</div>
-            <div class="date">Feb 2026 – Present</div>
-          </div>
-          <div class="entry">
-            <div class="org">Braven</div>
-            <div class="role">Fellow</div>
+            <div class="org">Braven Fellowship</div>
+            <div class="role">Outstanding Fellow — 3 of 80</div>
             <div class="date">Jan – May 2026</div>
-            <div class="note">Led the first-place capstone team of 8; Outstanding Fellow, 3 of 80.</div>
-          </div>
-          <div class="entry">
-            <div class="org">Robotics Club</div>
-            <div class="role">External Relations</div>
-            <div class="date">Sep 2025 – Jan 2026</div>
+            <div class="note">Led the first-place capstone team of 8.</div>
           </div>
         </div>
       </div>
@@ -193,7 +187,7 @@
     setTimeout(() => document.body.classList.add('ready'), 800);
 
     // ---- Inline category focus ----
-    var titles = { projects: 'Personal Projects', orgs: 'Student Organizations' };
+    var titles = { orgs: 'Student Organizations' };
     var backbarTitle = document.getElementById('backbarTitle');
     function apply() {
       var h = (location.hash || '').replace('#', '');
@@ -219,6 +213,32 @@
     document.querySelector('.backbar .back').addEventListener('click', clearFocus);
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && document.body.classList.contains('is-focus')) clearFocus();
+    });
+
+    // ---- Personal Projects carousel ----
+    (function () {
+      var track = document.querySelector('.slides-track');
+      if (!track) return;
+      var n = track.children.length, i = 0;
+      var cur = document.getElementById('scur');
+      function go(d) {
+        i = (i + d + n) % n;
+        track.style.transform = 'translateX(' + (-i * 100) + '%)';
+        if (cur) cur.textContent = i + 1;
+      }
+      document.querySelectorAll('.snav').forEach(function (b) {
+        b.addEventListener('click', function () { go(parseInt(b.getAttribute('data-dir'), 10)); });
+      });
+    })();
+
+    // ---- Copy install command ----
+    document.querySelectorAll('.cmd[data-copy]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        var t = el.getAttribute('data-copy');
+        if (navigator.clipboard) navigator.clipboard.writeText(t).catch(function () {});
+        el.classList.add('copied');
+        setTimeout(function () { el.classList.remove('copied'); }, 1400);
+      });
     });
   </script>
 </body>
