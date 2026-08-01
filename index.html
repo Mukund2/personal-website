@@ -15,15 +15,9 @@
     body { opacity: 0; transition: opacity 0.2s ease; }
     body.ready { opacity: 1; }
   </style>
-  <link rel="stylesheet" href="home.css?v=2026080108">
+  <link rel="stylesheet" href="home.css?v=2026080109">
 </head>
 <body>
-
-  <!-- Back bar (focus mode only) -->
-  <div class="backbar">
-    <a class="back" href="/">&larr; Index</a>
-    <span class="here" id="backbarTitle"></span>
-  </div>
 
   <div class="grid">
 
@@ -43,65 +37,22 @@
         <a href="https://x.com/mukundlk" target="_blank" rel="noopener">X — @mukundlk</a>
         <a href="https://www.linkedin.com/in/mukundlk" target="_blank" rel="noopener">LinkedIn — in/mukundlk</a>
       </div>
-
-      <div class="about-writing">
-        <div class="il-head">Writing</div>
-        <ul>
-          <li><a href="https://mukundk.substack.com/p/eval-is-all-you-need" target="_blank" rel="noopener">Eval Is All You Need <span class="by">— Substack</span></a></li>
-          <li><a href="https://mukundk.substack.com/p/the-chinese-singularity" target="_blank" rel="noopener">The Chinese Singularity <span class="by">— Substack</span></a></li>
-        </ul>
-      </div>
     </section>
 
     <!-- SELECT WORK -->
     <section class="col col-work">
       <div class="col-head">Select Work</div>
 
-      <!-- Personal Projects (carousel) -->
-      <section class="cat cat-slides" data-cat="projects">
-        <div class="slides-head">
-          <span class="label">Personal Projects</span>
-        </div>
-        <div class="slides">
-          <div class="slides-track">
-            <article class="item slide">
-              <div class="it-title">Dual-Use Tech Bridge</div>
-              <div class="it-meta">2026</div>
-              <div class="it-desc">Maps ~120,000 public U.S. military technologies to commercial applications, with an inference layer that surfaces transfers no one had made yet.</div>
-              <a class="more" href="https://github.com/Mukund2/dual-use-tech-bridge" target="_blank" rel="noopener">GitHub <span class="arw">&rarr;</span></a>
-            </article>
-            <article class="item slide">
-              <div class="it-title">Memi</div>
-              <div class="it-meta">Jan 2026 – Mar 2026</div>
-              <div class="it-desc">A CRM that lives inside your text messages — meeting people where they already are, not in another dashboard that taxes your attention.</div>
-              <button class="cmd" type="button" data-copy="clawhub install memi">clawhub install memi</button>
-            </article>
-            <article class="item slide">
-              <div class="it-title">Theron</div>
-              <div class="it-meta">2026</div>
-              <div class="it-desc">A local proxy that screens every autonomous-agent request for prompt injection and anomalous behavior. Sub-100ms latency, zero config.</div>
-              <a class="more" href="https://github.com/Mukund2/theron" target="_blank" rel="noopener">GitHub <span class="arw">&rarr;</span></a>
-            </article>
-          </div>
-          <button class="snav-next" aria-label="Next project">&rarr;</button>
-        </div>
-        <div class="slides-dots">
-          <button class="dot is-on" data-i="0" aria-label="Show project 1"></button>
-          <button class="dot" data-i="1" aria-label="Show project 2"></button>
-          <button class="dot" data-i="2" aria-label="Show project 3"></button>
-        </div>
-      </section>
-
       <!-- Student Organizations -->
-      <section class="cat" data-cat="orgs">
-        <a class="cat-head" href="#orgs"><span class="label">Student Organizations</span><span class="arw">&rarr;</span></a>
+      <section class="cat">
+        <div class="cat-head">Student Organizations</div>
         <div class="cat-items">
           <article class="item item-org">
             <a class="logo-sm" href="https://sjsunsin.org" target="_blank" rel="noopener"><img src="img/nsin-logo.svg" alt="NSIN logo"></a>
             <div class="it-body">
-              <div class="it-title">NSIN at SJSU</div>
+              <div class="it-title">NSIN SJSU</div>
               <div class="it-meta">Founder &amp; President<br>2026</div>
-              <div class="it-desc">Bridging Silicon Valley to Washington's hardest national-security problems. Founded the chapter and built the site.</div>
+              <div class="it-desc">Bridging Silicon Valley to Washington's hardest national-security problems. Founded it and built the site.</div>
               <a class="more" href="https://sjsunsin.org" target="_blank" rel="noopener">Visit <span class="arw">&rarr;</span></a>
             </div>
           </article>
@@ -122,6 +73,50 @@
               <div class="it-desc">Ran sponsorships and media; built the club site.</div>
               <a class="more" href="https://sjsurobotics.org" target="_blank" rel="noopener">Visit <span class="arw">&rarr;</span></a>
             </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Writing -->
+      <section class="cat">
+        <div class="cat-head">Writing</div>
+        <div class="cat-items">
+          <article class="item">
+            <div class="it-title"><a href="https://mukundk.substack.com/p/eval-is-all-you-need" target="_blank" rel="noopener">Eval Is All You Need</a></div>
+            <div class="it-meta">Substack</div>
+            <div class="it-desc">On jagged AGI, solving biology, and world models.</div>
+            <a class="more" href="https://mukundk.substack.com/p/eval-is-all-you-need" target="_blank" rel="noopener">Read <span class="arw">&rarr;</span></a>
+          </article>
+          <article class="item">
+            <div class="it-title"><a href="https://mukundk.substack.com/p/the-chinese-singularity" target="_blank" rel="noopener">The Chinese Singularity</a></div>
+            <div class="it-meta">Substack</div>
+            <div class="it-desc">On Gen Z's regression to Luddism, San Francisco's PR problem, and how America wins the AI race.</div>
+            <a class="more" href="https://mukundk.substack.com/p/the-chinese-singularity" target="_blank" rel="noopener">Read <span class="arw">&rarr;</span></a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Personal Projects -->
+      <section class="cat">
+        <div class="cat-head">Personal Projects</div>
+        <div class="cat-items">
+          <article class="item">
+            <div class="it-title">Dual-Use Tech Bridge</div>
+            <div class="it-meta">2026</div>
+            <div class="it-desc">Maps ~120,000 public U.S. military technologies to commercial applications, with an inference layer that surfaces transfers no one had made yet.</div>
+            <a class="more" href="https://github.com/Mukund2/dual-use-tech-bridge" target="_blank" rel="noopener">GitHub <span class="arw">&rarr;</span></a>
+          </article>
+          <article class="item">
+            <div class="it-title">Memi</div>
+            <div class="it-meta">Jan 2026 – Mar 2026</div>
+            <div class="it-desc">A CRM that lives inside your text messages — meeting people where they already are, not in another dashboard that taxes your attention.</div>
+            <button class="cmd" type="button" data-copy="clawhub install memi">clawhub install memi</button>
+          </article>
+          <article class="item">
+            <div class="it-title">Theron</div>
+            <div class="it-meta">2026</div>
+            <div class="it-desc">A local proxy that screens every autonomous-agent request for prompt injection and anomalous behavior. Sub-100ms latency, zero config.</div>
+            <a class="more" href="https://github.com/Mukund2/theron" target="_blank" rel="noopener">GitHub <span class="arw">&rarr;</span></a>
           </article>
         </div>
       </section>
@@ -186,50 +181,6 @@
   <script>
     document.fonts.ready.then(() => document.body.classList.add('ready'));
     setTimeout(() => document.body.classList.add('ready'), 800);
-
-    // ---- Inline category focus ----
-    var titles = { orgs: 'Student Organizations' };
-    var backbarTitle = document.getElementById('backbarTitle');
-    function apply() {
-      var h = (location.hash || '').replace('#', '');
-      if (titles[h]) {
-        document.body.classList.add('is-focus');
-        document.body.setAttribute('data-focus', h);
-        backbarTitle.textContent = titles[h];
-        var w = document.querySelector('.col-work'); if (w) w.scrollTop = 0;
-        window.scrollTo(0, 0);
-      } else {
-        document.body.classList.remove('is-focus');
-        document.body.removeAttribute('data-focus');
-      }
-    }
-    window.addEventListener('hashchange', apply);
-    apply();
-
-    function clearFocus(e) {
-      if (e) e.preventDefault();
-      history.pushState('', document.title, location.pathname + location.search);
-      apply();
-    }
-    document.querySelector('.backbar .back').addEventListener('click', clearFocus);
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && document.body.classList.contains('is-focus')) clearFocus();
-    });
-
-    // ---- Personal Projects carousel ----
-    (function () {
-      var track = document.querySelector('.slides-track');
-      if (!track) return;
-      var n = track.children.length, i = 0;
-      var dots = [].slice.call(document.querySelectorAll('.slides-dots .dot'));
-      function render() {
-        track.style.transform = 'translateX(' + (-i * 100) + '%)';
-        dots.forEach(function (dt, k) { dt.classList.toggle('is-on', k === i); });
-      }
-      var next = document.querySelector('.snav-next');
-      if (next) next.addEventListener('click', function () { i = (i + 1) % n; render(); });
-      dots.forEach(function (dt, k) { dt.addEventListener('click', function () { i = k; render(); }); });
-    })();
 
     // ---- Copy install command ----
     document.querySelectorAll('.cmd[data-copy]').forEach(function (el) {

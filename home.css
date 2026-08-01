@@ -1,7 +1,7 @@
 /* ============================================
    Mukund Kunapareddy — wireframe editorial
    System grotesque · uniform scale · hairline grid
-   Independent per-column scroll · inline category focus
+   Independent per-column scroll
    ============================================ */
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -43,26 +43,6 @@ i, em { font-style: italic; }
 /* hide scrollbars — columns still scroll */
 .col::-webkit-scrollbar { width: 0; height: 0; }
 .col { scrollbar-width: none; }
-
-/* ============================================
-   Back bar (only shown in focus mode)
-   ============================================ */
-
-.backbar {
-  display: none;
-  flex: 0 0 auto;
-  align-items: baseline;
-  gap: 20px;
-  padding: 16px var(--pad);
-  border-bottom: 1px solid var(--line);
-}
-body.is-focus .backbar { display: flex; }
-.backbar .back {
-  text-transform: uppercase;
-  transition: color 0.15s ease;
-}
-.backbar .back:hover { color: var(--muted); }
-.backbar .here { text-transform: uppercase; color: var(--muted); }
 
 /* ============================================
    Grid — three columns, full-height hairline rules
@@ -121,38 +101,20 @@ a.col-head:hover .arw { transform: translateX(4px); color: var(--fg); }
 }
 .linklist a:hover { text-decoration-color: #000; }
 
-.about-writing { margin-top: 2em; }
-.about-writing .il-head { text-decoration: underline; text-underline-offset: 2px; margin-bottom: 0.6em; }
-.about-writing ul { list-style: none; }
-.about-writing li { margin-bottom: 0.5em; }
-.about-writing .by { color: var(--muted); font-style: italic; }
-.about-writing a { text-decoration: underline; text-underline-offset: 2px; text-decoration-color: rgba(0,0,0,0.3); }
-.about-writing a:hover { text-decoration-color: #000; }
-
 /* ============================================
-   Select Work — categories
+   Select Work — sections (Orgs · Writing · Projects)
    ============================================ */
 
 .cat { border-top: 1px solid var(--line); padding-top: 26px; margin-top: 34px; }
 .cat:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
 
 .cat-head {
-  display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
-  cursor: pointer; margin-bottom: 30px;
+  margin-bottom: 30px;
   font-weight: 600; font-size: 1.0625rem; letter-spacing: -0.01em;
 }
-.cat-head .label { position: relative; }
-.cat-head .label::after {
-  content: ''; position: absolute; left: 0; bottom: -2px; width: 100%; height: 1px;
-  background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 0.25s ease;
-}
-.cat-head:hover .label::after { transform: scaleX(1); }
-.cat-head .arw { color: var(--muted); transition: transform 0.2s ease; }
-.cat-head:hover .arw { transform: translateX(4px); color: var(--fg); }
 
 .cat-items { display: flex; flex-direction: column; gap: 40px; }
 
-.item { }
 .item-org { display: flex; gap: 15px; align-items: flex-start; }
 .logo-sm {
   flex: 0 0 auto; width: 50px; height: 50px;
@@ -164,6 +126,8 @@ a.col-head:hover .arw { transform: translateX(4px); color: var(--fg); }
 .item-org .it-body { flex: 1 1 auto; min-width: 0; }
 
 .it-title { font-weight: 500; margin-bottom: 3px; }
+.it-title a { text-decoration: underline; text-underline-offset: 2px; text-decoration-color: rgba(0,0,0,0.3); transition: text-decoration-color 0.15s ease; }
+.it-title a:hover { text-decoration-color: #000; }
 .it-meta { color: var(--muted); margin-bottom: 8px; }
 .it-desc { max-width: 52ch; margin-bottom: 10px; }
 
@@ -175,27 +139,6 @@ a.col-head:hover .arw { transform: translateX(4px); color: var(--fg); }
 .more .arw { display: inline-block; transition: transform 0.2s ease; }
 .more:hover .arw { transform: translateX(3px); }
 .more.static { text-decoration: none; color: var(--muted); cursor: default; }
-
-/* Personal Projects — horizontal carousel */
-.slides-head { margin-bottom: 26px; }
-.slides-head .label { font-weight: 600; font-size: 1.0625rem; letter-spacing: -0.01em; }
-.slides { position: relative; overflow: hidden; }
-.slides-track { display: flex; align-items: flex-start; transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); }
-.slide { flex: 0 0 100%; min-width: 0; padding-right: 38px; }
-.snav-next {
-  position: absolute; right: 0; top: 50%; transform: translateY(-50%);
-  background: none; border: none; padding: 6px 4px; cursor: pointer;
-  font-size: 1.4rem; line-height: 1; color: var(--muted);
-  transition: color 0.15s ease, transform 0.2s ease;
-}
-.snav-next:hover { color: var(--fg); transform: translateY(-50%) translateX(3px); }
-.slides-dots { display: flex; justify-content: center; gap: 9px; margin-top: 20px; }
-.slides-dots .dot {
-  width: 6px; height: 6px; border-radius: 50%; border: none; padding: 0; cursor: pointer;
-  background: var(--line); transition: background 0.2s ease;
-}
-.slides-dots .dot:hover { background: var(--muted); }
-.slides-dots .dot.is-on { background: var(--fg); }
 
 /* install command (Memi) */
 .cmd {
@@ -225,43 +168,6 @@ a.col-head:hover .arw { transform: translateX(4px); color: var(--fg); }
 .entry a:hover { text-decoration-color: #000; }
 
 /* ============================================
-   Focus mode — one category, everything else hidden
-   ============================================ */
-
-body.is-focus .col-about,
-body.is-focus .col-resume { display: none; }
-body.is-focus .grid { grid-template-columns: 1fr; }
-body.is-focus .col-work .col-head { display: none; }
-
-/* hide the non-focused categories */
-body[data-focus="projects"] .cat:not([data-cat="projects"]),
-body[data-focus="orgs"]     .cat:not([data-cat="orgs"]),
-body[data-focus="writing"]  .cat:not([data-cat="writing"]) { display: none; }
-
-/* the focused category expands into a gallery */
-body.is-focus .cat { border-top: none; padding-top: 0; margin-top: 0; }
-body.is-focus .cat-head { cursor: default; pointer-events: none; margin-bottom: 40px; }
-body.is-focus .cat-head .arw { display: none; }
-body.is-focus .cat-head { font-size: 1.6rem; font-weight: 600; }
-body.is-focus .cat-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 52px 40px;
-  align-items: start;
-}
-body.is-focus .col-work { padding-bottom: 120px; }
-
-/* ============================================
-   Clock — fixed bottom-left
-   ============================================ */
-
-.clock {
-  position: fixed; bottom: 12px; left: var(--pad);
-  color: var(--muted); font-variant-numeric: tabular-nums; z-index: 30; pointer-events: none;
-}
-body.is-focus .clock { display: none; }
-
-/* ============================================
    Responsive — stack + normal page scroll on mobile
    ============================================ */
 
@@ -271,7 +177,4 @@ body.is-focus .clock { display: none; }
   .col { height: auto; overflow: visible; padding: 18px var(--pad) 40px; }
   .col + .col { border-left: none; border-top: 1px solid var(--line); }
   .col-head { padding-bottom: 40px; margin-bottom: 24px; }
-  .clock { position: static; display: block; padding: 0 var(--pad) 30px; }
-  body.is-focus .clock { display: none; }
-  body.is-focus .cat-items { grid-template-columns: 1fr; gap: 40px; }
 }
