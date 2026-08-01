@@ -7,152 +7,83 @@
   <meta name="description" content="Dual-Use Tech Bridge — an AI-powered platform mapping public U.S. military technology to commercial applications.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body { opacity: 0; transition: opacity 0.25s ease; }
+    body { opacity: 0; transition: opacity 0.2s ease; }
     body.ready { opacity: 1; }
   </style>
   <link rel="stylesheet" href="../home.css">
   <style>
-    /* Project detail — article layout */
-    .topbar .back {
-      font-size: var(--label);
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      transition: color 0.18s ease;
-    }
-    .topbar .back:hover { color: var(--accent); }
+    .page { max-width: 760px; margin: 0 auto; padding: 18px var(--pad) 120px; }
 
-    .article {
-      max-width: 660px;
-      margin: 0 auto;
-      padding: clamp(24px, 5vw, 56px) 0 0;
+    .bar {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 16px; border-bottom: 1px solid var(--line); margin-bottom: 64px;
     }
+    .bar a { transition: color 0.15s ease; }
+    .bar .idx { text-transform: uppercase; }
+    .bar a:hover { color: var(--muted); }
 
-    .art-eyebrow {
-      font-size: var(--label);
-      font-weight: 500;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
+    .eyebrow { text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+    .title { font-size: 1.5rem; font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 8px; }
+    .tagline { font-style: italic; color: var(--fg); margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--line); }
 
-    .art-title {
-      font-family: var(--serif);
-      font-size: clamp(2.1rem, 5.5vw, 3.1rem);
-      font-weight: 500;
-      line-height: 1.02;
-      letter-spacing: -0.025em;
-      margin-bottom: 14px;
-    }
+    .prose { max-width: 62ch; }
+    .prose p { margin-bottom: 1.1em; }
+    .prose p:first-child { font-weight: 500; }
 
-    .art-tagline {
-      font-family: var(--serif);
-      font-size: clamp(1.15rem, 2.4vw, 1.4rem);
-      font-style: italic;
-      color: var(--ink-soft);
-      margin-bottom: 40px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid var(--line);
+    .meta {
+      display: grid; grid-template-columns: 96px 1fr; gap: 14px 20px;
+      margin: 40px 0; padding: 26px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
     }
+    .meta .k { color: var(--muted); }
 
-    .art-prose p {
-      font-family: var(--serif);
-      font-size: 1.1875rem;
-      line-height: 1.72;
-      color: var(--ink-soft);
-      margin-bottom: 22px;
+    .go {
+      display: inline-block; text-decoration: underline; text-underline-offset: 2px;
+      text-decoration-color: rgba(0,0,0,0.3); transition: text-decoration-color 0.15s ease;
     }
-    .art-prose p:first-child { font-size: 1.28rem; color: var(--ink); }
+    .go:hover { text-decoration-color: #000; }
+    .go .arw { display: inline-block; transition: transform 0.2s ease; }
+    .go:hover .arw { transform: translateX(3px); }
 
-    .meta-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px 40px;
-      margin: 44px 0;
-      padding: 30px 0;
-      border-top: 1px solid var(--ink);
-      border-bottom: 1px solid var(--line);
-    }
-    .meta-grid > div { display: flex; flex-direction: column; gap: 5px; }
-    .m-label {
-      font-size: var(--label);
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .m-value { font-family: var(--serif); font-size: 1.0625rem; color: var(--ink); }
-
-    .art-actions {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
-    .art-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--ink);
-      border-bottom: 1px solid var(--ink);
-      padding-bottom: 2px;
-      transition: gap 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-    }
-    .art-link:hover { color: var(--accent); border-color: var(--accent); gap: 10px; }
-
-    @media (max-width: 560px) {
-      .meta-grid { grid-template-columns: 1fr; gap: 16px; }
-    }
+    @media (max-width: 520px) { .meta { grid-template-columns: 1fr; gap: 4px 0; } .meta .v { margin-bottom: 10px; } }
   </style>
 </head>
 <body>
-  <div class="shell">
+  <div class="page">
 
-    <div class="topbar">
-      <a class="wordmark" href="/">Mukund Kunapareddy</a>
-      <a class="back" href="/">&larr; Back</a>
+    <div class="bar">
+      <a href="/">Mukund Kunapareddy</a>
+      <a class="idx" href="/">&larr; Index</a>
     </div>
 
-    <article class="article">
-      <p class="art-eyebrow">Project · Apr – May 2026</p>
-      <h1 class="art-title">Dual-Use Tech Bridge</h1>
-      <p class="art-tagline">Finding the connections no one has made yet.</p>
+    <div class="eyebrow">Project · Apr – May 2026</div>
+    <h1 class="title">Dual-Use Tech Bridge</h1>
+    <div class="tagline">Finding the connections no one has made yet.</div>
 
-      <div class="art-prose">
-        <p>A large corpus of U.S. military technology is already public — scattered across SBIR/STTR grants, DTIC publications, DoD patents, and DARPA-funded research — but written in jargon that never maps to commercial applications. Engineers at drone startups keep reinventing things DARPA funded three years ago. They just don't know it exists.</p>
-        <p>Dual-Use Tech Bridge is an AI-powered platform that maps public U.S. military technology to commercial applications. I ingested ~120,000 technologies from federal open-data sources into a searchable web app, with an inference layer that explains, in plain English, how a given military technology could improve a commercial product — and vice versa.</p>
-      </div>
+    <div class="prose">
+      <p>A large corpus of U.S. military technology is already public — scattered across SBIR/STTR grants, DTIC publications, DoD patents, and DARPA-funded research — but written in jargon that never maps to commercial applications. Engineers at drone startups keep reinventing things DARPA funded three years ago. They just don't know it exists.</p>
+      <p>Dual-Use Tech Bridge is an AI-powered platform that maps public U.S. military technology to commercial applications. I ingested ~120,000 technologies from federal open-data sources into a searchable web app, with an inference layer that explains, in plain English, how a given military technology could improve a commercial product — and vice versa.</p>
+    </div>
 
-      <div class="meta-grid">
-        <div><span class="m-label">Role</span><span class="m-value">Founder</span></div>
-        <div><span class="m-label">Stack</span><span class="m-value">Next.js · Supabase · Claude</span></div>
-        <div><span class="m-label">Corpus</span><span class="m-value">~120,000 technologies</span></div>
-        <div><span class="m-label">Sources</span><span class="m-value">SBIR · DTIC · DARPA · NASA · patents</span></div>
-      </div>
+    <div class="meta">
+      <div class="k">Role</div><div class="v">Founder</div>
+      <div class="k">Stack</div><div class="v">Next.js · Supabase · Claude</div>
+      <div class="k">Corpus</div><div class="v">~120,000 technologies</div>
+      <div class="k">Sources</div><div class="v">SBIR · DTIC · DARPA · NASA · patents</div>
+    </div>
 
-      <div class="art-actions">
-        <a href="https://github.com/Mukund2/dual-use-tech-bridge" target="_blank" rel="noopener" class="art-link">View on GitHub <span>&rarr;</span></a>
-      </div>
-    </article>
-
-    <footer class="foot">
-      <span>&copy; 2026 Mukund Kunapareddy</span>
-      <span class="quip">Peace follows deterrence.</span>
-      <span>San José, CA</span>
-    </footer>
+    <a class="go" href="https://github.com/Mukund2/dual-use-tech-bridge" target="_blank" rel="noopener">View on GitHub <span class="arw">&rarr;</span></a>
 
   </div>
 
+  <div class="clock" id="clock">--:--:--</div>
+
   <script>
     document.fonts.ready.then(() => document.body.classList.add('ready'));
-    setTimeout(() => document.body.classList.add('ready'), 900);
+    setTimeout(() => document.body.classList.add('ready'), 800);
+    (function(){var el=document.getElementById('clock');function p(n){return String(n).padStart(2,'0');}
+    function t(){var d=new Date();el.textContent=p(d.getHours())+':'+p(d.getMinutes())+':'+p(d.getSeconds());}t();setInterval(t,1000);})();
   </script>
 </body>
 </html>
