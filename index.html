@@ -4,311 +4,239 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mukund Kunapareddy</title>
-  <meta name="description" content="Mukund Kunapareddy. Strategy, national security, and the American industrial base.">
+  <meta name="description" content="Mukund Kunapareddy — strategy, national security, and the American industrial base. Building a pipeline between Silicon Valley technology and Washington's hardest problems.">
+  <meta property="og:title" content="Mukund Kunapareddy">
+  <meta property="og:description" content="Strategy, national security, and the American industrial base.">
+  <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    body { opacity: 0; transition: opacity 0.2s ease; }
-    body.fonts-loaded { opacity: 1; }
+    body { opacity: 0; transition: opacity 0.25s ease; }
+    body.ready { opacity: 1; }
   </style>
-  <script>
-    document.fonts.ready.then(() => document.body.classList.add('fonts-loaded'));
-    setTimeout(() => document.body.classList.add('fonts-loaded'), 1000);
-  </script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
 </head>
 <body>
+  <div class="shell">
 
-  <!-- Hub -->
-  <div class="hub striped-bg" id="hub">
-    <div class="hub-inner postcard postcard-tilted">
-      <div class="postcard-layout">
-        <div class="postcard-left">
-          <p class="hub-about">I'm studying Management Information Systems at SJSU, where I'm building a pipeline between Silicon Valley technology and Washington's most pressing national security challenges. Peace follows deterrence. On the side, I play golf.</p>
+    <!-- Top bar -->
+    <div class="topbar">
+      <span class="wordmark">Mukund Kunapareddy</span>
+      <span class="clock" id="clock">— — : — —</span>
+    </div>
+
+    <main class="grid">
+
+      <!-- ABOUT -->
+      <section class="col col-about">
+        <div class="col-head">About</div>
+        <div class="about-inner">
+          <div class="about-intro">
+            <div class="emblem">
+              <img src="atoms-for-peace.jpg" alt="Atoms for Peace stamp, 1955">
+            </div>
+            <h1 class="name">Mukund<br>Kunapareddy</h1>
+            <p class="role">Management Information Systems<br>San José State University</p>
+            <p class="bio">I'm building a pipeline between Silicon Valley technology and Washington's most pressing national security challenges. <em>Peace follows deterrence.</em></p>
+            <p class="bio">Interested in strategy, the American industrial base, and where software meets hard problems. On the side, I play golf.</p>
+          </div>
+          <div class="about-contact">
+            <div class="block-label">Contact</div>
+            <ul class="contact">
+              <li><span class="k">Email</span><a href="mailto:mkunapareddy@gmail.com">mkunapareddy@gmail.com</a></li>
+              <li><span class="k">X</span><a href="https://x.com/mukundlk" target="_blank" rel="noopener">@mukundlk</a></li>
+              <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/mukundlk" target="_blank" rel="noopener">in/mukundlk</a></li>
+              <li><span class="k">GitHub</span><a href="https://github.com/Mukund2" target="_blank" rel="noopener">Mukund2</a></li>
+            </ul>
+
+            <div class="block-label">Influences</div>
+            <ul class="influences">
+              <li><a href="https://www.youtube.com/watch?v=Wj6ttdIeBnE" target="_blank" rel="noopener"><span class="t">Alex Karp at the American Dynamism Summit</span><span class="by">a16z</span></a></li>
+              <li><a href="https://stanfordreview.org/in-defense-of-defense-tech/" target="_blank" rel="noopener"><span class="t">In Defense of Defense Tech</span><span class="by">Stanford Review</span></a></li>
+              <li><a href="https://archive.org/details/simulacra-and-simulation-1995-university-of-michigan-press" target="_blank" rel="noopener"><span class="t">Simulacra and Simulation</span><span class="by">Jean Baudrillard</span></a></li>
+              <li><span class="t">The Singularity Is Near</span><span class="by">Ray Kurzweil</span></li>
+            </ul>
+          </div>
         </div>
-        <div class="postcard-right">
-          <div class="postcard-stamp"><img src="atoms-for-peace.jpg" alt="Atoms for Peace stamp, 1955" /></div>
-          <div class="hub-name-block">
-            <h1 class="hub-name">Mukund<br>Kunapareddy</h1>
-            <p class="hub-subtitle">Management Information Systems, San Jose State University</p>
-            <div class="postcard-lines">
-              <div class="postcard-line"></div>
-              <div class="postcard-line"></div>
+      </section>
+
+      <!-- SELECT WORK -->
+      <section class="col col-work">
+        <div class="col-head">Select Work</div>
+        <ol class="work">
+
+          <li class="work-item">
+            <div class="work-num">01</div>
+            <div class="work-main">
+              <div class="work-title-row">
+                <h2 class="work-title">Dual-Use Tech Bridge</h2>
+                <span class="work-year">2026</span>
+              </div>
+              <p class="work-desc">An AI platform that surfaces non-obvious connections between public U.S. military technology and commercial applications. Ingested ~120,000 technologies from federal open-data sources, then built an inference layer that finds transfers no one had made yet.</p>
+              <div class="tags">
+                <span class="tag">Founder</span>
+                <span class="tag">Next.js</span>
+                <span class="tag">Supabase</span>
+                <span class="tag">Claude</span>
+              </div>
+              <a class="work-link" href="/dual-use-tech-bridge">Read the case <span class="arw">&rarr;</span></a>
+            </div>
+          </li>
+
+          <li class="work-item">
+            <div class="work-num">02</div>
+            <div class="work-main">
+              <div class="work-title-row">
+                <h2 class="work-title">Memi</h2>
+                <span class="work-year">2026</span>
+              </div>
+              <p class="work-desc">An AI-native CRM built around SMS. The future of the interface is meeting people where they already are — not another dashboard that taxes your attention. Started at a frat rush event, when I realized I'd forget everyone I just met.</p>
+              <div class="tags">
+                <span class="tag">Founder</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">SMS</span>
+                <span class="tag">Claude</span>
+              </div>
+              <span class="work-link muted">Private beta</span>
+            </div>
+          </li>
+
+          <li class="work-item">
+            <div class="work-num">03</div>
+            <div class="work-main">
+              <div class="work-title-row">
+                <h2 class="work-title">Theron</h2>
+                <span class="work-year">2026</span>
+              </div>
+              <p class="work-desc">A local proxy that intercepts and analyzes every autonomous-agent request for prompt injection and anomalous behavior. Built the week after OpenClaw shipped, when the security surface of agentic AI became impossible to ignore. Sub-100ms latency, zero config.</p>
+              <div class="tags">
+                <span class="tag">Security</span>
+                <span class="tag">Proxy</span>
+                <span class="tag">Agents</span>
+              </div>
+              <a class="work-link" href="https://github.com/Mukund2/theron" target="_blank" rel="noopener">View on GitHub <span class="arw">&rarr;</span></a>
+            </div>
+          </li>
+
+        </ol>
+        <a class="work-more" href="https://github.com/Mukund2" target="_blank" rel="noopener">More on GitHub &rarr;</a>
+      </section>
+
+      <!-- RESUME -->
+      <section class="col col-resume">
+        <div class="col-head">Résumé</div>
+
+        <div class="res-row">
+          <div class="res-label">Education</div>
+          <div class="res-body">
+            <div class="res-entry">
+              <div class="h">San José State University</div>
+              <div class="s">B.B.A., Management Information Systems</div>
+              <div class="d">2025 – 2028 (Expected)</div>
             </div>
           </div>
         </div>
-      </div>
-      <nav class="hub-nav">
-        <span class="hub-link" data-panel="writing">Writing</span>
-        <span class="hub-link" data-panel="experience">Experience</span>
-        <span class="hub-link" data-panel="connect">Connect</span>
-      </nav>
-    </div>
+
+        <div class="res-row">
+          <div class="res-label">Work</div>
+          <div class="res-body">
+            <div class="res-entry">
+              <div class="h">Atlas</div>
+              <div class="s">Recruiting Intern</div>
+              <div class="d">Feb – Mar 2026</div>
+              <div class="n">Sourced and screened technical talent for a defense &amp; manufacturing startup — learned what the top of this field looks like, and how to recognize it.</div>
+            </div>
+            <div class="res-entry">
+              <div class="h">Hera Health Solutions</div>
+              <div class="s">Team Lead</div>
+              <div class="d">Jun – Aug 2024</div>
+              <div class="n">Led the design and build of the company website.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="res-row">
+          <div class="res-label">Leadership</div>
+          <div class="res-body">
+            <div class="res-entry">
+              <div class="h">NSIN at SJSU</div>
+              <div class="s">Founder &amp; President</div>
+              <div class="d">Mar 2026 – Present</div>
+              <div class="n">Bridging Silicon Valley to Washington's hardest national-security problems. <a href="https://sjsunsin.org" target="_blank" rel="noopener">sjsunsin.org</a></div>
+            </div>
+            <div class="res-entry">
+              <div class="h">AI Student Ambassador</div>
+              <div class="s">Lucas College of Business</div>
+              <div class="d">Jul 2026 – Present</div>
+              <div class="n">Sole AI ambassador for the Lucas College &amp; Graduate School of Business; helped shape the AI-literacy course now required of every SJSU student.</div>
+            </div>
+            <div class="res-entry">
+              <div class="h">Spartan Racing — Formula SAE</div>
+              <div class="s">Sponsorship &amp; Media</div>
+              <div class="d">Feb 2026 – Present</div>
+              <div class="n">Secured $30K in sponsorship in three weeks; built <a href="https://sjsuformulasae.com" target="_blank" rel="noopener">sjsuformulasae.com</a>.</div>
+            </div>
+            <div class="res-entry">
+              <div class="h">Braven</div>
+              <div class="s">Fellow</div>
+              <div class="d">Jan – May 2026</div>
+              <div class="n">Led the first-place capstone team of 8; named an Outstanding Fellow (3 of 80) — the prize was hosting a real hackathon.</div>
+            </div>
+            <div class="res-entry">
+              <div class="h">Robotics Club</div>
+              <div class="s">External Relations</div>
+              <div class="d">Sep 2025 – Jan 2026</div>
+              <div class="n">Ran sponsorships and media; created <a href="https://sjsurobotics.org" target="_blank" rel="noopener">sjsurobotics.org</a>.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="res-row">
+          <div class="res-label">Writing</div>
+          <div class="res-body">
+            <div class="res-entry">
+              <div class="h"><a href="https://mukundk.substack.com/p/eval-is-all-you-need" target="_blank" rel="noopener">Eval Is All You Need</a></div>
+              <div class="n">On jagged AGI, solving biology, and world models.</div>
+            </div>
+            <div class="res-entry">
+              <div class="h"><a href="https://mukundk.substack.com/p/the-chinese-singularity" target="_blank" rel="noopener">The Chinese Singularity</a></div>
+              <div class="n">On Gen Z's regression to Luddism, San Francisco's PR problem, and how America wins the AI race.</div>
+            </div>
+            <div class="res-entry">
+              <div class="h"><a href="https://x.com/mukundlk" target="_blank" rel="noopener">@mukundlk</a></div>
+              <div class="n">Where I write most often.</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer class="foot">
+      <span>&copy; 2026 Mukund Kunapareddy</span>
+      <span class="quip">Peace follows deterrence.</span>
+      <span>San José, CA</span>
+    </footer>
+
   </div>
 
-  <!-- Writing Panel -->
-  <div class="panel striped-bg" id="writing">
-    <div class="panel-header">
-      <button class="panel-back">&larr; Back</button>
-      <span class="panel-title">Writing</span>
-    </div>
-    <div class="panel-body">
-      <div class="writing-cards">
-        <div class="postcard writing-card postcard-tilt-slight">
-          <h2>Essays</h2>
-          <div class="item-list">
-            <a href="https://mukundk.substack.com/p/eval-is-all-you-need" target="_blank" rel="noopener" class="item-row">
-              <div>
-                <h3>Eval Is All You Need</h3>
-                <p>On jagged AGI, solving biology, and world models.</p>
-              </div>
-              <span class="item-arrow">&rarr;</span>
-            </a>
-            <a href="https://mukundk.substack.com/p/the-chinese-singularity" target="_blank" rel="noopener" class="item-row">
-              <div>
-                <h3>The Chinese Singularity</h3>
-                <p>On Gen Z's regression to Luddism, San Francisco's PR problem, and how America wins the AI race.</p>
-              </div>
-              <span class="item-arrow">&rarr;</span>
-            </a>
-          </div>
-        </div>
-        <div class="postcard writing-card postcard-tilt-right">
-          <h2>X Posts</h2>
-          <div class="item-list">
-            <a href="https://x.com/mukundlk" target="_blank" rel="noopener" class="item-row">
-              <div>
-                <h3>@mukundlk</h3>
-                <p class="item-meta">I write here most frequently.</p>
-              </div>
-              <span class="item-arrow">&rarr;</span>
-            </a>
-          </div>
-        </div>
-        <div class="postcard writing-card postcard-tilt-slight">
-          <h2>Influences</h2>
-          <div class="accordion-list">
-            <a href="https://www.youtube.com/watch?v=Wj6ttdIeBnE" target="_blank" rel="noopener" class="item-row">
-              <div>
-                <h3>Alex Karp at the American Dynamism Summit</h3>
-                <p class="item-meta">With Katherine Boyle, a16z</p>
-              </div>
-              <span class="item-arrow">&rarr;</span>
-            </a>
-            <a href="https://stanfordreview.org/in-defense-of-defense-tech/" target="_blank" rel="noopener" class="item-row">
-              <div>
-                <h3>In Defense of Defense Tech</h3>
-                <p class="item-meta">Stanford Review</p>
-              </div>
-              <span class="item-arrow">&rarr;</span>
-            </a>
-            <a href="https://archive.org/details/simulacra-and-simulation-1995-university-of-michigan-press" target="_blank" rel="noopener" class="item-row">
-              <div>
-                <h3>Simulacra and Simulation</h3>
-                <p class="item-meta">Jean Baudrillard</p>
-              </div>
-              <span class="item-arrow">&rarr;</span>
-            </a>
-            <div class="item-row item-row-expandable">
-              <div class="item-row-top" data-poster="anduril-poster">
-                <div>
-                  <h3>We Can't Win With Blueprints</h3>
-                  <p class="item-meta">Anduril</p>
-                </div>
-                <span class="accordion-icon">+</span>
-              </div>
-              <div class="poster-dropdown" id="anduril-poster">
-                <a href="https://www.anduril.com" target="_blank" rel="noopener" class="poster-link">
-                  <img src="anduril-poster.png" alt="Anduril poster" class="poster-img" />
-                </a>
-              </div>
-            </div>
-            <div class="item-row item-row-expandable">
-              <div class="item-row-top" data-poster="singularity-blurb">
-                <div>
-                  <h3>The Singularity Is Near</h3>
-                  <p class="item-meta">Ray Kurzweil</p>
-                </div>
-                <span class="accordion-icon">+</span>
-              </div>
-              <div class="poster-dropdown" id="singularity-blurb">
-                <p class="influence-blurb">After reading this senior year of high school, I realized post-ASI all we'll have is the people around us. That guides everything I do now.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Experience Panel -->
-  <div class="panel striped-bg" id="experience">
-    <div class="panel-header">
-      <button class="panel-back">&larr; Back</button>
-      <span class="panel-title">Experience</span>
-    </div>
-    <div class="panel-body exp-wide">
-      <div class="experience-columns four-col">
-        <div class="postcard exp-card postcard-tilt-slight">
-          <h2>Work</h2>
-          <div class="accordion-list">
-            <div class="accordion-item">
-              <button class="accordion-toggle">
-                <span class="accordion-name">Atlas <span class="accordion-date">Feb – Mar 2026</span></span>
-                <span class="accordion-icon">+</span>
-              </button>
-              <div class="accordion-content">
-                <p class="accordion-role">Recruiting intern</p>
-                <p>Defense and manufacturing startup recruiting. Wanted to learn what top talent in this space looks like, and how to identify it. Trained on sourcing and screening for technical roles. Learned to apply that pattern recognition to myself. Company pivoted.</p>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <button class="accordion-toggle">
-                <span class="accordion-name">Hera Health Solutions <span class="accordion-date">Jun – Aug 2024</span></span>
-                <span class="accordion-icon">+</span>
-              </button>
-              <div class="accordion-content">
-                <p class="accordion-role">Team lead</p>
-                <p>Led the website design and build.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="postcard exp-card postcard-tilt-right">
-          <h2>Campus</h2>
-          <div class="accordion-list">
-            <div class="accordion-item">
-              <button class="accordion-toggle">
-                <span class="accordion-name">AI Student Ambassador <span class="accordion-date">Jul 2026 – Present</span></span>
-                <span class="accordion-icon">+</span>
-              </button>
-              <div class="accordion-content">
-                <p class="accordion-role">SJSU Lucas College of Business</p>
-                <p>The sole AI Student Ambassador for the SJSU Lucas College and Graduate School of Business. Helped shape the AI literacy course that every SJSU student is required to take.</p>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <button class="accordion-toggle">
-                <span class="accordion-name">NSIN <span class="accordion-date">Mar 2026 – Present</span></span>
-                <span class="accordion-icon">+</span>
-              </button>
-              <div class="accordion-content">
-                <p class="accordion-role">Founder/President</p>
-                <p>Bridging Silicon Valley technology with Washington's most pressing national security challenges.</p>
-                <a href="https://sjsunsin.org" target="_blank" rel="noopener" class="inline-link">sjsunsin.org</a>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <button class="accordion-toggle">
-                <span class="accordion-name">Spartan Racing Formula SAE <span class="accordion-date">Feb 2026 – Present</span></span>
-                <span class="accordion-icon">+</span>
-              </button>
-              <div class="accordion-content">
-                <p class="accordion-role">Intern</p>
-                <p>Pile of metal to 0–60 in &lt;4 seconds. Secured $30,000 in sponsorship in the first three weeks. Built the team website, <a href="https://sjsuformulasae.com" target="_blank" rel="noopener">sjsuformulasae.com</a>.</p>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <button class="accordion-toggle">
-                <span class="accordion-name">Braven <span class="accordion-date">Jan – May 2026</span></span>
-                <span class="accordion-icon">+</span>
-              </button>
-              <div class="accordion-content">
-                <p class="accordion-role">Fellow</p>
-                <p>Led the first-place team out of 8 in the capstone challenge, revitalizing Hacker Dojo. Won Outstanding Braven Fellow, one of three out of 80. The prize: hosting a real hackathon in summer 2026.</p>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <button class="accordion-toggle">
-                <span class="accordion-name">Robotics Club <span class="accordion-date">Sep 2025 – Jan 2026</span></span>
-                <span class="accordion-icon">+</span>
-              </button>
-              <div class="accordion-content">
-                <p class="accordion-role">External relations</p>
-                <p>Led sponsorships and media. Created <a href="https://sjsurobotics.org" target="_blank" rel="noopener">sjsurobotics.org</a>.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="postcard exp-card postcard-tilt-slight">
-          <h2>Projects</h2>
-          <div class="accordion-list">
-            <div class="accordion-item">
-              <button class="accordion-toggle">
-                <span class="accordion-name">Dual-Use Tech Bridge <span class="accordion-date">Apr – May 2026</span></span>
-                <span class="accordion-icon">+</span>
-              </button>
-              <div class="accordion-content">
-                <p>An AI platform that surfaces non-obvious connections between public U.S. military technology and commercial applications. Ingested ~120,000 technologies from federal open-data sources, then used an inference layer to find transfers no one had made yet.</p>
-                <a href="/dual-use-tech-bridge" class="inline-link">View &rarr;</a>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <button class="accordion-toggle">
-                <span class="accordion-name">Memi <span class="accordion-date">Jan – Mar 2026</span></span>
-                <span class="accordion-icon">+</span>
-              </button>
-              <div class="accordion-content">
-                <p>AI-native CRM built around SMS. The future of UI is meeting users where they are, not cognitively taxing apps or dashboards. Started at a frat rush event where I realized I'd forget everyone I met.</p>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <button class="accordion-toggle">
-                <span class="accordion-name">Theron <span class="accordion-date">Jan 2026</span></span>
-                <span class="accordion-icon">+</span>
-              </button>
-              <div class="accordion-content">
-                <p>Right after OpenClaw released, I saw a massive cybersecurity risk in autonomous AI agents. Built a local proxy that intercepts and analyzes every agent request for prompt injection and anomalous behavior. Sub-100ms latency, zero config.</p>
-                <a href="https://github.com/Mukund2/theron" target="_blank" rel="noopener" class="inline-link">View on GitHub</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="postcard exp-card postcard-tilt-right">
-          <h2>Education</h2>
-          <div class="accordion-list">
-            <div class="accordion-item">
-              <button class="accordion-toggle">
-                <span class="accordion-name">San Jose State University <span class="accordion-date">2025 – 2028 (Expected)</span></span>
-                <span class="accordion-icon">+</span>
-              </button>
-              <div class="accordion-content">
-                <p>Bachelor of Business Administration, Management Information Systems concentration.</p>
-                <p>Coursework: Systems Analysis &amp; Design, Fundamentals of MIS, Managerial Accounting, Operations Management, Business Law &amp; Ethics, Finance, Management, Organizational Behavior.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Connect Panel -->
-  <div class="panel striped-bg" id="connect">
-    <div class="panel-header">
-      <button class="panel-back">&larr; Back</button>
-      <span class="panel-title">Connect</span>
-    </div>
-    <div class="panel-body">
-      <p class="connect-intro">Say hi.</p>
-      <div class="connect-cards">
-        <a href="https://x.com/mukundlk" target="_blank" rel="noopener" class="postcard connect-postcard">
-          <span class="connect-name">X</span>
-          <span class="connect-handle">@mukundlk</span>
-        </a>
-        <a href="https://www.linkedin.com/in/mukundlk" target="_blank" rel="noopener" class="postcard connect-postcard">
-          <span class="connect-name">LinkedIn</span>
-          <span class="connect-handle">in/mukundlk</span>
-        </a>
-        <a href="https://github.com/Mukund2" target="_blank" rel="noopener" class="postcard connect-postcard">
-          <span class="connect-name">GitHub</span>
-          <span class="connect-handle">Mukund2</span>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <script src="main.js"></script>
+  <script>
+    document.fonts.ready.then(() => document.body.classList.add('ready'));
+    setTimeout(() => document.body.classList.add('ready'), 900);
+    // Local time ticker — small nod to the reference's timestamp
+    (function () {
+      var el = document.getElementById('clock');
+      function tick() {
+        var d = new Date();
+        var hh = String(d.getHours()).padStart(2, '0');
+        var mm = String(d.getMinutes()).padStart(2, '0');
+        var ss = String(d.getSeconds()).padStart(2, '0');
+        el.textContent = hh + ':' + mm + ':' + ss + ' PT';
+      }
+      tick(); setInterval(tick, 1000);
+    })();
+  </script>
 </body>
 </html>

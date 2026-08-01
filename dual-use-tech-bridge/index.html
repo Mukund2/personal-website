@@ -7,159 +7,152 @@
   <meta name="description" content="Dual-Use Tech Bridge — an AI-powered platform mapping public U.S. military technology to commercial applications.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    body { opacity: 0; transition: opacity 0.2s ease; }
-    body.fonts-loaded { opacity: 1; }
+    body { opacity: 0; transition: opacity 0.25s ease; }
+    body.ready { opacity: 1; }
   </style>
-  <script>
-    document.fonts.ready.then(() => document.body.classList.add('fonts-loaded'));
-    setTimeout(() => document.body.classList.add('fonts-loaded'), 1000);
-  </script>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../home.css">
   <style>
-    /* Subpage-specific — standalone project detail */
-    html, body { overflow-y: auto; height: auto; }
-    body { min-height: 100vh; }
-
-    .subpage { min-height: 100vh; }
-
-    .project-body {
-      position: relative;
-      z-index: 1;
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 40px clamp(24px, 5vw, 80px) 100px;
-    }
-
-    .project-card { padding: 44px 48px; }
-
-    .project-eyebrow {
-      font-family: var(--sans);
-      font-size: 0.6875rem;
+    /* Project detail — article layout */
+    .topbar .back {
+      font-size: var(--label);
       font-weight: 500;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 14px;
+      color: var(--muted);
+      transition: color 0.18s ease;
+    }
+    .topbar .back:hover { color: var(--accent); }
+
+    .article {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: clamp(24px, 5vw, 56px) 0 0;
     }
 
-    .project-title {
-      font-family: var(--serif);
-      font-size: clamp(1.75rem, 5vw, 2.4rem);
-      font-weight: 600;
-      line-height: 1.05;
-      letter-spacing: -0.01em;
-      color: var(--text);
-      margin-bottom: 8px;
-    }
-
-    .project-tagline {
-      font-family: var(--body-serif);
-      font-size: 1.125rem;
-      font-style: italic;
-      color: var(--text-secondary);
-      margin-bottom: 28px;
-    }
-
-    .project-prose p {
-      font-family: var(--body-serif);
-      font-size: 1.0625rem;
-      line-height: 1.75;
-      color: var(--text-secondary);
+    .art-eyebrow {
+      font-size: var(--label);
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
       margin-bottom: 18px;
     }
 
-    .project-meta-grid {
+    .art-title {
+      font-family: var(--serif);
+      font-size: clamp(2.1rem, 5.5vw, 3.1rem);
+      font-weight: 500;
+      line-height: 1.02;
+      letter-spacing: -0.025em;
+      margin-bottom: 14px;
+    }
+
+    .art-tagline {
+      font-family: var(--serif);
+      font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+      font-style: italic;
+      color: var(--ink-soft);
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .art-prose p {
+      font-family: var(--serif);
+      font-size: 1.1875rem;
+      line-height: 1.72;
+      color: var(--ink-soft);
+      margin-bottom: 22px;
+    }
+    .art-prose p:first-child { font-size: 1.28rem; color: var(--ink); }
+
+    .meta-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 18px 24px;
-      margin: 32px 0 28px;
-      padding: 24px 0;
-      border-top: 1px solid var(--border-light);
-      border-bottom: 1px solid var(--border-light);
+      gap: 22px 40px;
+      margin: 44px 0;
+      padding: 30px 0;
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--line);
     }
-
-    .project-meta-grid > div {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .meta-label {
-      font-family: var(--sans);
-      font-size: 0.625rem;
+    .meta-grid > div { display: flex; flex-direction: column; gap: 5px; }
+    .m-label {
+      font-size: var(--label);
       font-weight: 500;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: var(--muted);
     }
+    .m-value { font-family: var(--serif); font-size: 1.0625rem; color: var(--ink); }
 
-    .meta-value {
-      font-family: var(--body-serif);
-      font-size: 0.9375rem;
-      color: var(--text);
-    }
-
-    .project-actions {
+    .art-actions {
       display: flex;
-      gap: 20px;
+      gap: 24px;
       align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
     }
-
-    .project-actions .inline-link {
-      margin-top: 0;
+    .art-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--ink);
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 2px;
+      transition: gap 0.2s ease, color 0.2s ease, border-color 0.2s ease;
     }
+    .art-link:hover { color: var(--accent); border-color: var(--accent); gap: 10px; }
 
-    @media (max-width: 600px) {
-      .project-card { padding: 32px 26px; }
-      .project-meta-grid { grid-template-columns: 1fr; gap: 14px; }
+    @media (max-width: 560px) {
+      .meta-grid { grid-template-columns: 1fr; gap: 16px; }
     }
   </style>
 </head>
 <body>
-  <div class="subpage striped-bg">
-    <div class="panel-header">
-      <a class="panel-back" href="/">&larr; Back</a>
-      <span class="panel-title">Project</span>
+  <div class="shell">
+
+    <div class="topbar">
+      <a class="wordmark" href="/">Mukund Kunapareddy</a>
+      <a class="back" href="/">&larr; Back</a>
     </div>
 
-    <div class="project-body">
-      <div class="postcard project-card postcard-tilt-slight">
-        <p class="project-eyebrow">Apr &ndash; May 2026</p>
-        <h1 class="project-title">Dual-Use Tech Bridge</h1>
-        <p class="project-tagline">Finding the connections no one has made yet.</p>
+    <article class="article">
+      <p class="art-eyebrow">Project · Apr – May 2026</p>
+      <h1 class="art-title">Dual-Use Tech Bridge</h1>
+      <p class="art-tagline">Finding the connections no one has made yet.</p>
 
-        <div class="project-prose">
-          <p>A large corpus of U.S. military technology is already public&mdash;scattered across SBIR/STTR grants, DTIC publications, DoD patents, and DARPA-funded research&mdash;but written in jargon that never maps to commercial applications. Engineers at drone startups keep reinventing things DARPA funded three years ago. They just don't know it exists.</p>
-          <p>Dual-Use Tech Bridge is an AI-powered platform that maps public U.S. military technology to commercial applications. I ingested ~120,000 technologies from federal open-data sources into a searchable web app, with an inference layer that explains, in plain English, how a given military technology could improve a commercial product&mdash;and vice versa.</p>
-        </div>
-
-        <div class="project-meta-grid">
-          <div>
-            <span class="meta-label">Role</span>
-            <span class="meta-value">Founder</span>
-          </div>
-          <div>
-            <span class="meta-label">Stack</span>
-            <span class="meta-value">Next.js &middot; Supabase &middot; Claude</span>
-          </div>
-          <div>
-            <span class="meta-label">Corpus</span>
-            <span class="meta-value">~120,000 technologies</span>
-          </div>
-          <div>
-            <span class="meta-label">Sources</span>
-            <span class="meta-value">SBIR &middot; DTIC &middot; DARPA &middot; NASA &middot; patents</span>
-          </div>
-        </div>
-
-        <div class="project-actions">
-          <a href="https://github.com/Mukund2/dual-use-tech-bridge" target="_blank" rel="noopener" class="inline-link">View on GitHub &rarr;</a>
-        </div>
+      <div class="art-prose">
+        <p>A large corpus of U.S. military technology is already public — scattered across SBIR/STTR grants, DTIC publications, DoD patents, and DARPA-funded research — but written in jargon that never maps to commercial applications. Engineers at drone startups keep reinventing things DARPA funded three years ago. They just don't know it exists.</p>
+        <p>Dual-Use Tech Bridge is an AI-powered platform that maps public U.S. military technology to commercial applications. I ingested ~120,000 technologies from federal open-data sources into a searchable web app, with an inference layer that explains, in plain English, how a given military technology could improve a commercial product — and vice versa.</p>
       </div>
-    </div>
+
+      <div class="meta-grid">
+        <div><span class="m-label">Role</span><span class="m-value">Founder</span></div>
+        <div><span class="m-label">Stack</span><span class="m-value">Next.js · Supabase · Claude</span></div>
+        <div><span class="m-label">Corpus</span><span class="m-value">~120,000 technologies</span></div>
+        <div><span class="m-label">Sources</span><span class="m-value">SBIR · DTIC · DARPA · NASA · patents</span></div>
+      </div>
+
+      <div class="art-actions">
+        <a href="https://github.com/Mukund2/dual-use-tech-bridge" target="_blank" rel="noopener" class="art-link">View on GitHub <span>&rarr;</span></a>
+      </div>
+    </article>
+
+    <footer class="foot">
+      <span>&copy; 2026 Mukund Kunapareddy</span>
+      <span class="quip">Peace follows deterrence.</span>
+      <span>San José, CA</span>
+    </footer>
+
   </div>
+
+  <script>
+    document.fonts.ready.then(() => document.body.classList.add('ready'));
+    setTimeout(() => document.body.classList.add('ready'), 900);
+  </script>
 </body>
 </html>
